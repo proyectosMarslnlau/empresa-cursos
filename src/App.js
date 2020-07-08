@@ -3,7 +3,6 @@ import React, { Fragment } from "react";
 import Navigation from "./navigation/Navigation";
 // Importamos Materialize
 import "materialize-css/dist/css/materialize.min.css";
-//Importamos JQUERY
 
 const App = () => {
   return (
