@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import styled from "@emotion/styled";
-import Modal from "../../item/Modal";
+
 const Start1 = () => {
   return (
     <Fragment>
@@ -22,7 +22,6 @@ const Start1 = () => {
           </div>
         </Contenedor>
       </ContenedorPrincipal>
-      <Modal />
     </Fragment>
   );
 };
