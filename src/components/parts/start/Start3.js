@@ -39,14 +39,20 @@ const Contenedor = styled.div`
     width: 50vw;
     height: 10vh;
     background: #0b1629;
-    border-top: solid 2px red;
-    border-left: solid 2px red;
-    border-bottom: solid 2px red;
+    border-top: solid 2px #8cda3f;
+    border-left: solid 2px #8cda3f;
+    border-bottom: solid 2px #8cda3f;
     padding: 10px;
     border-radius: 30px;
   }
   input {
     font-family: "Montserrat", sans-serif;
+    color: #8cda3f;
+  }
+  /* label underline focus color */
+  input[type="text"]:not(.browser-default):focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #8cda3f;
     color: #8cda3f;
   }
   button {
