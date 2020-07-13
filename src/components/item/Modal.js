@@ -42,7 +42,7 @@ const Modal = ({ guardarVentanaModal, datos }) => {
           <div class="modal-content ">
             <div className="center-align titulo-modal">
               Aprovecha y aplica <br />
-              el siguiente cupon
+              el siguiente cupón
             </div>
             <div className="container row">
               <div className="col s12 m12 x4 xl4 rebajas">

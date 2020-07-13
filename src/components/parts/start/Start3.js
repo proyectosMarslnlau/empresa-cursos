@@ -40,8 +40,8 @@ const Start3 = () => {
       <Contenedor>
         <div className="center-align">
           <p className="wow fadeInUp" data-wow-duration="2s">
-            REGISTRATE PARA RECIBIR ACTUALIZACIONES <br />
-            NUEVAS DE CRECE
+            REGÍSTRATE PARA RECIBIR ACTUALIZACIONES <br />
+            NUEVAS DE CRECÉ
           </p>
         </div>
         <div className="container formulario">

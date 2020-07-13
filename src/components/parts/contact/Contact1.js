@@ -49,7 +49,7 @@ const Contact1 = () => {
               className="titulo center-align wow fadeInUp"
               data-wow-duration="3s"
             >
-              CONTACTANOS
+              CONTÁCTANOS
             </p>
           </div>
           <div className="col s12 m12 x8 xl8 seccion-formulario">

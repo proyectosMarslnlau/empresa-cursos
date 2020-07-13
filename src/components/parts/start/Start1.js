@@ -11,7 +11,7 @@ const Start1 = () => {
         <div className="col s12 m6 x6 xl6">
           <p className="titulo-principal">
             ALCANZA TU
-            <br /> MAXIMA
+            <br /> MÁXIMA
             <br /> CAPACIDAD
             <p className="titulo-secundario">
               Llega mas alla de lo que imaginas <br />

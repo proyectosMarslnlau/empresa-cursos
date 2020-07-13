@@ -12,7 +12,7 @@ const Start2 = () => {
     <Fragment>
       <Contenedor>
         <div className="center-align texto-principal">
-          ¿CUAL ES TU PROPOSITO?
+          ¿CUÁL ES TU PROPÓSITO?
         </div>
         <div className="row contenedor-imagenes">
           <div class="col s12 m12 x6 xl6 paralelo parallax-container">

@@ -11,7 +11,7 @@ const On2 = () => {
               <div className="col s12 m12 x7 xl7 cuadro-texto">
                 <p className="titulo">
                   LA <br />
-                  INNOVACION
+                  INNOVACIÓN
                 </p>
                 <p className="texto wow fadeInLeft" data-wow-duration="2s">
                   La innovación consiste en utilizar conocimiento para construir

@@ -9,7 +9,7 @@ const Footer = () => {
             <img src="/sheet_public/img/logo.png" alt="" />
           </div>
           <div className="col s10 m10 x8 xl8 center-align texto">
-            &copy; 2020 Crece - Hecho orgullosamente en Latam{" "}
+            &copy; 2020 Crecé - Hecho orgullosamente en Latam{" "}
             <img
               src="/sheet_public/img/latam.png"
               alt=""

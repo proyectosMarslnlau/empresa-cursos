@@ -15,7 +15,7 @@ const On1 = () => {
               />
               <p className="titulo wow fadeInLeft" data-wow-duration="3s">
                 SOBRE <br />
-                CRECE
+                CRECÉ
               </p>
             </div>
           </div>
