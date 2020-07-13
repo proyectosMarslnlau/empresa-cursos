@@ -10,7 +10,7 @@ import { animateScroll as scroll } from "react-scroll";
 import WOW from "wowjs";
 import axios from "axios";
 
-const CourseEducanino = () => {
+const CoursePhotoShop = () => {
   //State para poder abrir el MODAL
   const [ventanaModal, guardarVentanaModal] = useState(false);
   //State de datos de CURSO
@@ -27,28 +27,27 @@ const CourseEducanino = () => {
     new WOW.WOW({
       live: false,
     }).init();
-    peticionEducanino();
+    peticionPhotoshop();
   }, []);
   //Variables contantes
   const curso = {
-    resumenCurso: `Si eres como yo y estás loco por tu fiel amigo. Una mirada a su dulce cara y tu corazón se derrite como la mantequilla.
-    Siempre has pensado en tus amigos caninos como miembros de tu familia. Les das mucho amor y afecto, pero no les pasó que alguna vez nos hacen renegar por alguna traverusa o como cuando abrimos la puerta y salen corriendo sin control ¿a quién no?
-    Es por ello, que con Educanino tenemos la oportunidad de saber cuáles son las técnicas para educar y entrenar a nuestros queridos peludos.
+    resumenCurso: `¿Aún editas tus imágenes en paint o word?
+    Todos hemos oído o sabemos qué es Photoshop y para qué sirve, pero debemos admitir que ni bien ingresamos tenemos una interfaz con muchos controles y botones y no sabes por dónde empezar.
+    Si a ti te gusta tomar fotografías con el teléfono o te gustaría poder hacer tus propios diseños para tus trabajos o proyectos, este es el programa adecuado, porque te inicias con Photoshop desde lo básico, paso a paso, desde entendiendo la interfaz hasta retoques de fotografías.   
+    ¡Aprende el software de diseño más usado en el mundo! 
     `,
-    informacionProducto: `Lenny Educanino es un programa completo para educar y entrenar a nuestros queridos amigos peludos.
-    Cuenta con más de 100 técnicas supér sencillas de seguir sin afectar esa alegría que nos regalan estos amiguitos.`,
+    informacionProducto: `Este curso está orientado a personas que nunca tocaron Adobe Photoshop, descubre paso a paso todas las herramientas y atajos para aplicarlos en tus propios proyectos.`,
     politicaReembolso: `Prueba el programa por 7 días y si no estás 100% satisfecho, te reembolsaremos tu dinero.`,
-    solicitaDescuento: `Píde por messenger tu CUPÓN del 50% de descuento.`,
+    solicitaDescuento: `Píde por messenger tu CUPÓN del 50% de descuento. `,
   };
   const imagenes = {
-    imagen1: `/sheet_public/img/educanino/01 educanino.jpg`,
-    imagen2: `/sheet_public/img/educanino/02 educanino.jpg`,
+    imagen1: `/sheet_public/img/photoshop/01 photoshop.jpg`,
+    imagen2: `/sheet_public/img/photoshop/02 photoshop.jpg`,
   };
-
-  const peticionEducanino = async () => {
-    const urlEducanino = `http://localhost:5000/dates?titulo=EDUCANINO`;
+  const peticionPhotoshop = async () => {
+    const urlPhotoshop = `http://localhost:5000/dates?titulo=PHOTOSHOP PRINCIPIANTES`;
     try {
-      const peticion = await axios.get(urlEducanino);
+      const peticion = await axios.get(urlPhotoshop);
       const datos = peticion.data[0];
       guardarDatos(datos);
       if (datos.promocion === "si") {
@@ -74,4 +73,4 @@ const CourseEducanino = () => {
   );
 };
 
-export default CourseEducanino;
+export default CoursePhotoShop;

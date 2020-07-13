@@ -6,6 +6,11 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Start from "../components/parts/Start";
 import On from "../components/parts/On";
 import CourseEducanino from "../components/parts/CourseEducanino";
+import CourseCanva from "../components/parts/CourseCanva";
+import CoursePhotoShop from "../components/parts/CoursePhotoShop";
+import CourseWhatsapp from "../components/parts/CourseWhatsapp";
+import CourseWordPress from "../components/parts/CourseWordPress";
+
 import Contact from "../components/parts/Contact";
 //---------------------- Error ------------------------------------------------
 import ErrorFile from "../components/error/ErrorFile";
@@ -48,6 +53,10 @@ const Navigation = () => {
             <Route exact path="/start" component={Start} />
             <Route exact path="/on" component={On} />
             <Route exact path="/course-educanino" component={CourseEducanino} />
+            <Route exact path="/course-canva" component={CourseCanva} />
+            <Route exact path="/course-photoshop" component={CoursePhotoShop} />
+            <Route exact path="/course-whatsapp" component={CourseWhatsapp} />
+            <Route exact path="/course-wordpress" component={CourseWordPress} />
             <Route exact path="/contact" component={Contact} />
             <Route component={ErrorFile} />
           </Switch>

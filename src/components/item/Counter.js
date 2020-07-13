@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
-const Counter = () => {
+import axios from "axios";
+
+const Counter = ({ titulo }) => {
+  const [time, guardarTime] = useState("");
+
   const calculateTimeLeft = () => {
-    const difference = +new Date("2020-07-15") - +new Date();
+    const difference = +new Date(`${time}`) - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -13,7 +17,14 @@ const Counter = () => {
         seconds: Math.floor((difference / 1000) % 60),
       };
     }
-
+    if (isNaN(difference)) {
+      timeLeft = {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
+    }
     if (timeLeft.days < 10) {
       //dos cifras para el segundo
       timeLeft.days = "0" + timeLeft.days;
@@ -40,6 +51,22 @@ const Counter = () => {
     }, 1000);
   });
 
+  useEffect(() => {
+    peticionCourse();
+  }, [titulo]);
+
+  const peticionCourse = async () => {
+    const url = `http://localhost:5000/dates?titulo=${titulo}`;
+
+    try {
+      const peticion = await axios.get(url);
+      const datos = peticion.data[0].tiempo;
+      guardarTime(datos);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  //-------------------------------------------
   return (
     <Contenedor>
       <div className="container row">
@@ -92,6 +119,20 @@ const Contenedor = styled.div`
     font-size: 12px;
     font-weight: bold;
     color: #000;
+  }
+  @media (max-width: 600px) {
+    .tipo {
+      font-size: 20px;
+    }
+    .titulo {
+      font-size: 9px;
+    }
+  }
+  @media (min-width: 601px) and (max-width: 992px) {
+  }
+  @media (min-width: 993px) and (max-width: 1200px) {
+  }
+  @media (min-width: 1201px) {
   }
 `;
 export default Counter;

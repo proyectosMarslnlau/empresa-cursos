@@ -1,0 +1,49 @@
+{
+  "dates": [
+    {
+      "titulo": "EDUCANINO",
+      "inscripciones": "ABIERTAS",
+      "proximo": "DOMINGO 10:00",
+      "tiempo": "2020-07-14",
+      "link": "https://www.google.com",
+      "promocion": "si",
+      "cupon": "12345"
+    },
+    {
+      "titulo": "WORDPRESS 101",
+      "inscripciones": "ABIERTAS",
+      "proximo": "DOMINGO 9:00",
+      "link": "www.facebook.com",
+      "tiempo": "",
+      "promocion": "si",
+      "cupon": "12345"
+    },
+    {
+      "titulo": "PHOTOSHOP PRINCIPIANTES",
+      "inscripciones": "CERRADAS",
+      "proximo": "DOMINGO 9:00",
+      "link": "www.facebook.com",
+      "tiempo": "",
+      "promocion": "no",
+      "cupon": "12345"
+    },
+    {
+      "titulo": "CANVA PARA FACEBOOK",
+      "inscripciones": "ABIERTAS",
+      "proximo": "DOMINGO 10:00",
+      "tiempo": "2020-07-14",
+      "link": "https://www.google.com",
+      "promocion": "si",
+      "cupon": "12345"
+    },
+    {
+      "titulo": "WHATSAPP BUSINESS",
+      "inscripciones": "ABIERTAS",
+      "proximo": "DOMINGO 9:00",
+      "link": "www.facebook.com",
+      "tiempo": "",
+      "promocion": "si",
+      "cupon": "12345"
+    }
+  ]
+}

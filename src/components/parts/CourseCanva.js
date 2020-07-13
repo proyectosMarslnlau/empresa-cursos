@@ -10,12 +10,10 @@ import { animateScroll as scroll } from "react-scroll";
 import WOW from "wowjs";
 import axios from "axios";
 
-const CourseEducanino = () => {
-  //State para poder abrir el MODAL
+const CourseCanva = () => {
   const [ventanaModal, guardarVentanaModal] = useState(false);
   //State de datos de CURSO
   const [datos, guardarDatos] = useState({});
-  //Inicializamos el use Effect para inicializar el proyecto
   useEffect(() => {
     //Inicializamos el Scroll Automatico para los cambios de Pagina
     const scrollType = {
@@ -27,28 +25,27 @@ const CourseEducanino = () => {
     new WOW.WOW({
       live: false,
     }).init();
-    peticionEducanino();
+    peticionCanva();
   }, []);
   //Variables contantes
   const curso = {
-    resumenCurso: `Si eres como yo y estás loco por tu fiel amigo. Una mirada a su dulce cara y tu corazón se derrite como la mantequilla.
-    Siempre has pensado en tus amigos caninos como miembros de tu familia. Les das mucho amor y afecto, pero no les pasó que alguna vez nos hacen renegar por alguna traverusa o como cuando abrimos la puerta y salen corriendo sin control ¿a quién no?
-    Es por ello, que con Educanino tenemos la oportunidad de saber cuáles son las técnicas para educar y entrenar a nuestros queridos peludos.
+    resumenCurso: `¿Por más que intentas tus diseños no son lo que buscas?
+    Sí lo entiendo, estamos horas y horas frente al Photoshop, revisando cómo hacen publicidad la competencia, pero nada, siempre o bien tenemos un arte frío y que nos dice que algo hace falta.
+    Pues gracias a este programa podemos aprender a utilizar una valiosa plataforma que nos llenará de ideas, no solo eso, sino que podremos realizar nuestros diseños directamente ahí en CANVA, para luego poder exportarlos como imagen y publicar en Facebook.
+    Créeme, tus diseños ahora sí podrán ser diferentes y captar la atención de tu público..
     `,
-    informacionProducto: `Lenny Educanino es un programa completo para educar y entrenar a nuestros queridos amigos peludos.
-    Cuenta con más de 100 técnicas supér sencillas de seguir sin afectar esa alegría que nos regalan estos amiguitos.`,
+    informacionProducto: `Con este programa aprenderás a dominar Canva de una manera sencilla, más fácil de aprender que otros costosos software de diseño gráfico. Puedes lograr excelentes resultados, y dado que Canva es de uso gratuito, puedes ahorrar enormes cantidades de dinero en subcontratar o comprar software.`,
     politicaReembolso: `Prueba el programa por 7 días y si no estás 100% satisfecho, te reembolsaremos tu dinero.`,
-    solicitaDescuento: `Píde por messenger tu CUPÓN del 50% de descuento.`,
+    solicitaDescuento: `Píde por messenger tu CUPÓN del 50% de descuento. `,
   };
   const imagenes = {
-    imagen1: `/sheet_public/img/educanino/01 educanino.jpg`,
-    imagen2: `/sheet_public/img/educanino/02 educanino.jpg`,
+    imagen1: `/sheet_public/img/canva/01 canva.jpg`,
+    imagen2: `/sheet_public/img/canva/01 canva.jpg`,
   };
-
-  const peticionEducanino = async () => {
-    const urlEducanino = `http://localhost:5000/dates?titulo=EDUCANINO`;
+  const peticionCanva = async () => {
+    const urlCanva = `http://localhost:5000/dates?titulo=CANVA PARA FACEBOOK`;
     try {
-      const peticion = await axios.get(urlEducanino);
+      const peticion = await axios.get(urlCanva);
       const datos = peticion.data[0];
       guardarDatos(datos);
       if (datos.promocion === "si") {
@@ -74,4 +71,4 @@ const CourseEducanino = () => {
   );
 };
 
-export default CourseEducanino;
+export default CourseCanva;

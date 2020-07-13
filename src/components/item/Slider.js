@@ -5,7 +5,8 @@ import styled from "@emotion/styled";
 
 import Counter from "./Counter";
 
-const Slider = () => {
+const Slider = ({ imagenes, datos }) => {
+  const { titulo, proximo, link, inscripciones } = datos;
   useEffect(() => {
     var sliderElems = document.querySelectorAll(".slider");
     var sliderInstance = M.Slider.init(sliderElems, {
@@ -43,35 +44,59 @@ const Slider = () => {
           </div>
           <ul class="slides">
             <li>
-              <img src="https://lorempixel.com/580/250/nature/1" />
+              <img src={imagenes.imagen1} />
               <div class="caption center-align ofertas">
                 <p>
-                  <span className="titulo-curso">EDUCANINO</span>
+                  <span className="titulo-curso">{titulo}</span>
                   <br />
                   <span className="inscripcion">
                     INSCRIPCIONES <br />
-                    ABIERTAS
+                    {inscripciones}
                   </span>
                   <br />
                   <span className="fecha-literal">
                     Hasta el proximo <br />
-                    Domingo 9:00
+                    {proximo}
                   </span>
                 </p>
                 <p>
-                  <Counter />
+                  <Counter titulo={titulo} />
                 </p>
                 <p>
-                  <button>Comprar ahora</button>
+                  <button
+                    role="link"
+                    onClick={() => {
+                      window.open(`${link}`);
+                    }}
+                  >
+                    Comprar ahora
+                  </button>
                 </p>
               </div>
             </li>
 
             <li>
-              <img src="https://lorempixel.com/580/250/nature/2" />
+              <img src={imagenes.imagen2} />
               <div class="caption center-align ofertas">
-                <h3>Left Aligned Caption</h3>
-                <h5 class="light grey-text text-lighten-3">HOLA MUNDO</h5>
+                <p>
+                  <span className="titulo-curso">{titulo}</span>
+                  <br />
+                  <span className="inscripcion">
+                    INSCRIPCIONES <br />
+                    {inscripciones}
+                  </span>
+                  <br />
+                  <span className="fecha-literal">
+                    Hasta el proximo <br />
+                    {proximo}
+                  </span>
+                </p>
+                <p>
+                  <Counter titulo={titulo} />
+                </p>
+                <p>
+                  <button>Comprar ahora</button>
+                </p>
               </div>
             </li>
           </ul>
@@ -127,7 +152,8 @@ const Contenedor = styled.div`
 
   .titulo-curso {
     font-family: "Oswald", sans-serif;
-    font-size: 50px;
+    font-size: 45px;
+    line-height: 0.8em;
     font-weight: 700;
     color: #8cda3f;
   }
@@ -161,6 +187,57 @@ const Contenedor = styled.div`
     background: #8cda3f;
     color: #0b1629;
     transition: 0.5s;
+  }
+  @media (max-width: 600px) {
+    .slider .slides li .caption {
+      width: 100%;
+      height: 60vh;
+      right: 0;
+      left: 0;
+      top: 5vh;
+      background: rgba(12, 23, 43, 0.6);
+    }
+    i {
+      font-size: 1.5em;
+    }
+    .prev {
+      top: 35vh;
+      left: -15px;
+    }
+    .next {
+      top: 35vh;
+      right: -15px;
+    }
+    .rebajas {
+      font-size: 8px;
+    }
+    .titulo-curso {
+      font-size: 25px;
+    }
+    .inscripcion {
+      font-size: 40px;
+      font-weight: 700;
+    }
+    .fecha-literal {
+      font-size: 25px;
+    }
+  }
+  @media (min-width: 601px) and (max-width: 992px) {
+    .prev {
+      top: 35vh;
+      left: -20px;
+    }
+    .next {
+      top: 35vh;
+      right: -20px;
+    }
+    .slider ul li {
+      height: 130vh;
+    }
+  }
+  @media (min-width: 993px) and (max-width: 1200px) {
+  }
+  @media (min-width: 1201px) {
   }
 `;
 export default Slider;

@@ -4,35 +4,32 @@ import styled from "@emotion/styled";
 const Start1 = () => {
   return (
     <Fragment>
-      <ContenedorPrincipal>
-        <Contenedor className="container row">
-          <div className="col s6">
-            <p className="titulo-principal">
-              ALCANZA TU
-              <br /> MAXIMA
-              <br /> CAPACIDAD
-              <p className="titulo-secundario">
-                Llega mas alla de lo que imaginas <br />
-                <button>VER AHORA</button>
-              </p>
+      <Contenedor
+        className="container row responsive wow fadeIn"
+        data-wow-duration="2s"
+      >
+        <div className="col s12 m6 x6 xl6">
+          <p className="titulo-principal">
+            ALCANZA TU
+            <br /> MAXIMA
+            <br /> CAPACIDAD
+            <p className="titulo-secundario">
+              Llega mas alla de lo que imaginas <br />
+              <button>VER AHORA</button>
             </p>
-          </div>
-          <div className="col s6 imagen">
-            <img src="/sheet_public/img/dentos.gif" alt="" />
-          </div>
-        </Contenedor>
-      </ContenedorPrincipal>
+          </p>
+        </div>
+        <div className="col s12 m6 x6 xl6 imagen hide-on-med-and-down">
+          <img src="/sheet_public/img/pcfinal.gif" alt="" />
+        </div>
+      </Contenedor>
     </Fragment>
   );
 };
-const ContenedorPrincipal = styled.div`
+const Contenedor = styled.div`
   background-image: url("/sheet_public/img/fondo1.jpg");
   background-size: 100% 130%;
-`;
-const Contenedor = styled.div`
-  padding: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 20px 50px 20px 50px;
   height: 90vh;
   .titulo-principal {
     color: #8cda3f;
@@ -68,6 +65,42 @@ const Contenedor = styled.div`
   }
   .imagen {
     margin-top: 100px;
+  }
+  @media (max-width: 600px) {
+    width: 93vw;
+    background-size: 180% 130%;
+    padding: 20px 0px 20px 0px;
+    .titulo-principal {
+      font-size: 55px;
+      line-height: 63px;
+      font-weight: 500;
+    }
+    button {
+      font-size: 16px;
+      width: 150px;
+      font-weight: 200;
+    }
+  }
+  @media (min-width: 601px) and (max-width: 992px) {
+    width: 93vw;
+    background-size: 180% 130%;
+    padding: 20px 0px 20px 0px;
+    margin-bottom: 50px;
+    .titulo-principal {
+      font-size: 55px;
+      line-height: 63px;
+      font-weight: 500;
+    }
+    button {
+      font-size: 16px;
+      width: 150px;
+      font-weight: 200;
+    }
+  }
+  @media (min-width: 993px) and (max-width: 1200px) {
+    margin-bottom: 10px;
+  }
+  @media (min-width: 1201px) {
   }
 `;
 export default Start1;

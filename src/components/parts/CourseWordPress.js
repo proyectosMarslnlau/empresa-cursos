@@ -10,7 +10,7 @@ import { animateScroll as scroll } from "react-scroll";
 import WOW from "wowjs";
 import axios from "axios";
 
-const CourseEducanino = () => {
+const CourseWordPress = () => {
   //State para poder abrir el MODAL
   const [ventanaModal, guardarVentanaModal] = useState(false);
   //State de datos de CURSO
@@ -27,28 +27,28 @@ const CourseEducanino = () => {
     new WOW.WOW({
       live: false,
     }).init();
-    peticionEducanino();
+    peticionWordpress();
   }, []);
   //Variables contantes
   const curso = {
-    resumenCurso: `Si eres como yo y estás loco por tu fiel amigo. Una mirada a su dulce cara y tu corazón se derrite como la mantequilla.
-    Siempre has pensado en tus amigos caninos como miembros de tu familia. Les das mucho amor y afecto, pero no les pasó que alguna vez nos hacen renegar por alguna traverusa o como cuando abrimos la puerta y salen corriendo sin control ¿a quién no?
-    Es por ello, que con Educanino tenemos la oportunidad de saber cuáles son las técnicas para educar y entrenar a nuestros queridos peludos.
+    resumenCurso: `¿Aún no tienes tu página web para tu negocio?
+    Estamos en 2020 y debido a la pandemia, absolutamente todos los negocios se están digitalizando, es necesario, porque los negocios tienen que seguir adelante no podemos parar.
+    Además de contar con una página en Facebook, es indispensable tener una página web donde nos presentemos, donde expongamos nuestros productos y nos demos a conocer. Un negocio sin página web tiende a no generar esa confianza con nuestros clientes.
+    Ahora quizás estés pensando en contratar un desarrollador para tu página pero muchas veces suele salir algo caro, créeme tener una página bonita, sencilla y completa no es tan caro y tú mismo podrías darle actualizaciones o modificaciones cuantas veces quieras. 
     `,
-    informacionProducto: `Lenny Educanino es un programa completo para educar y entrenar a nuestros queridos amigos peludos.
-    Cuenta con más de 100 técnicas supér sencillas de seguir sin afectar esa alegría que nos regalan estos amiguitos.`,
+    informacionProducto: `Con este programa aprenderás a crear tu propia página web con WordPress, la plataforma más ampliamente usada para tu negocio o proyecto personal de manera rápida y sencilla.`,
     politicaReembolso: `Prueba el programa por 7 días y si no estás 100% satisfecho, te reembolsaremos tu dinero.`,
-    solicitaDescuento: `Píde por messenger tu CUPÓN del 50% de descuento.`,
+    solicitaDescuento: `Píde por messenger tu CUPÓN del 50% de descuento. `,
   };
   const imagenes = {
-    imagen1: `/sheet_public/img/educanino/01 educanino.jpg`,
-    imagen2: `/sheet_public/img/educanino/02 educanino.jpg`,
+    imagen1: `/sheet_public/img/wordpress/01 wordpress 101.jpg`,
+    imagen2: `/sheet_public/img/wordpress/02 wordpress 101.jpg`,
   };
 
-  const peticionEducanino = async () => {
-    const urlEducanino = `http://localhost:5000/dates?titulo=EDUCANINO`;
+  const peticionWordpress = async () => {
+    const urlWordpress = `http://localhost:5000/dates?titulo=WORDPRESS 101`;
     try {
-      const peticion = await axios.get(urlEducanino);
+      const peticion = await axios.get(urlWordpress);
       const datos = peticion.data[0];
       guardarDatos(datos);
       if (datos.promocion === "si") {
@@ -74,4 +74,4 @@ const CourseEducanino = () => {
   );
 };
 
-export default CourseEducanino;
+export default CourseWordPress;

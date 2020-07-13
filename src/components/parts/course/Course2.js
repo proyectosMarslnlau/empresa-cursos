@@ -1,43 +1,39 @@
 import React, { Fragment } from "react";
 import styled from "@emotion/styled";
-const Course2 = () => {
+const Course2 = ({ curso }) => {
+  const {
+    resumenCurso,
+    informacionProducto,
+    politicaReembolso,
+    solicitaDescuento,
+  } = curso;
   return (
     <Fragment>
       <Contenedor>
         <div className="container">
-          <p className="center-align texto-superior">
-            Si eres como yo y estás loco por tu fiel amigo. Una mirada a su
-            dulce cara y tu corazón se derrite como la mantequilla. Siempre has
-            pensado en tus amigos caninos como miembros de tu familia. <br />
-            Les das mucho amor y afecto, pero no les pasó que alguna vez nos
-            hacen renegar por alguna traverusa o como cuando abrimos la puerta y
-            salen corriendo sin control ¿a quién no? Es por ello, que con
-            Educanino tenemos la oportunidad de saber cuáles son las técnicas
-            para educar y entrenar a nuestros queridos peludos.
-          </p>
+          <p className="center-align texto-superior">{resumenCurso}</p>
         </div>
         <div className="container row">
-          <div className="col s4 seccion">
+          <div
+            className="col s12 m12 x4 xl4 seccion col s4 seccion wow fadeInUp"
+            data-wow-duration="2s"
+          >
             <p className="titulo center-align">INFORMACIÓN DEL PRODUCTO</p>
-            <p className="texto">
-              Educanino es un programa completo para educar y entrenar a
-              nuestros queridos amigos peludos. Cuenta con más de 100 técnicas
-              supér sencillas de seguir sin afectar esa alegría que nos regalan
-              estos amiguitos.
-            </p>
+            <p className="texto">{informacionProducto}</p>
           </div>
-          <div className="col s4 seccion">
+          <div
+            className="col s12 m12 x4 xl4 seccion col s4 seccion wow fadeInUp"
+            data-wow-duration="2s"
+          >
             <p className="titulo center-align">POLITICA DE REEMBOLSO</p>
-            <p className="texto">
-              Prueba el programa por 7 días y si no estás 100% satisfecho, te
-              reembolsaremos tu dinero.
-            </p>
+            <p className="texto">{politicaReembolso}</p>
           </div>
-          <div className="col s4 seccion">
+          <div
+            className="col s12 m12 x4 xl4 seccion col s4 seccion wow fadeInUp"
+            data-wow-duration="2s"
+          >
             <p className="titulo center-align">SOLICITA TU DESCUENTO</p>
-            <p className="texto">
-              Píde por messenger tu CUPÓN del 50% de descuento.
-            </p>
+            <p className="texto">{solicitaDescuento}</p>
           </div>
         </div>
       </Contenedor>
@@ -50,7 +46,7 @@ const Contenedor = styled.div`
     margin-left: 200px;
     margin-right: 200px;
     color: #fff;
-
+    white-space: pre-wrap;
     font-family: "Montserrat", sans-serif;
     font-size: 15px;
   }
@@ -68,8 +64,40 @@ const Contenedor = styled.div`
   .texto {
     font-family: "Montserrat", sans-serif;
     color: #fff;
-
+    white-space: pre-wrap;
     font-size: 15px;
+  }
+  @media (max-width: 600px) {
+    margin-bottom: 20px;
+
+    .texto-superior {
+      margin-left: 5px;
+      margin-right: 5px;
+      font-size: 15px;
+    }
+    .seccion {
+      padding: 20px;
+    }
+    .titulo {
+      font-size: 17px;
+      font-weight: 22px;
+    }
+    .texto {
+      font-size: 13px;
+    }
+  }
+  @media (min-width: 601px) and (max-width: 992px) {
+    margin-top: 230px;
+    margin-bottom: 20px;
+
+    .texto-superior {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  @media (min-width: 993px) and (max-width: 1200px) {
+  }
+  @media (min-width: 1201px) {
   }
 `;
 export default Course2;

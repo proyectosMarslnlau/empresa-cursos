@@ -1,6 +1,8 @@
 import React, { Fragment, useEffect } from "react";
 import styled from "@emotion/styled";
 import M from "materialize-css";
+import { animateScroll as scroll } from "react-scroll";
+
 const Start2 = () => {
   useEffect(() => {
     var elems = document.querySelectorAll(".parallax");
@@ -13,23 +15,38 @@ const Start2 = () => {
           ¿CUAL ES TU PROPOSITO?
         </div>
         <div className="row contenedor-imagenes">
-          <div class="col s6 paralelo parallax-container">
+          <div class="col s12 m12 x6 xl6 paralelo parallax-container">
             <div class="parallax">
               <img src="https://picsum.photos/500/1500" />
             </div>
           </div>
-          <div className="col s6 texto center-align">
+          <div className="col s12 m12 x6 xl6 texto center-align">
             <p>
-              <span> TU PROPIA STARTUP</span> <br />
-              <button>SELECT</button>
+              <span className="wow fadeInRight" data-wow-duration="2s">
+                TU PROPIA STARTUP
+              </span>
+              <br />
+              <button
+                onClick={() => {
+                  scroll.scrollToTop();
+                }}
+              >
+                SELECT
+              </button>
             </p>
             <p>
-              <span>
+              <span className="wow fadeInRight" data-wow-duration="2s">
                 DESARROLLAR NUEVAS <br />
                 HABILIDADES
               </span>
               <br />
-              <button>SELECT</button>
+              <button
+                onClick={() => {
+                  scroll.scrollToTop();
+                }}
+              >
+                SELECT
+              </button>
             </p>
           </div>
         </div>
@@ -38,6 +55,7 @@ const Start2 = () => {
   );
 };
 const Contenedor = styled.div`
+  margin-top: 150px;
   .texto-principal {
     color: #8cda3f;
     font-family: "Oswald", sans-serif;
@@ -89,6 +107,51 @@ const Contenedor = styled.div`
   }
   p {
     margin-top: 80px;
+  }
+  @media (max-width: 600px) {
+    .contenedor-imagenes {
+      margin-top: 20px;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    span {
+      font-size: 30px;
+      line-height: 48px;
+    }
+  }
+  @media (min-width: 601px) and (max-width: 992px) {
+    margin-top: 100px;
+    .texto-principal {
+      font-size: 30px;
+    }
+    .contenedor-imagenes {
+      margin-top: 20px;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .texto {
+      height: 150vh;
+    }
+    span {
+      font-size: 30px;
+      line-height: 80px;
+    }
+    p {
+      line-height: 40px;
+      margin-top: 30px;
+    }
+    span {
+      font-size: 30px;
+      line-height: 0px;
+      font-weight: 700;
+    }
+    button {
+      margin-top: 0px;
+    }
+  }
+  @media (min-width: 993px) and (max-width: 1200px) {
+  }
+  @media (min-width: 1201px) {
   }
 `;
 export default Start2;

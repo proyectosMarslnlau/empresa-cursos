@@ -1,21 +1,42 @@
 import React, { Fragment } from "react";
 import styled from "@emotion/styled";
-const Course3 = () => {
+const Course3 = ({ datos }) => {
   return (
     <Fragment>
       <Contenedor>
         <div className="container row">
-          <div className="col s4 right-align ">
-            <img src="/sheet_public/img/garantia.png" alt="" />
+          <div className="col s12 m12 x4 xl4 right-align cuadro-imagen">
+            <img
+              src="/sheet_public/img/garantia.png"
+              alt=""
+              className="wow zoomIn"
+              data-wow-duration="1s"
+            />
           </div>
-          <div className="col s4 center-align">
-            <button className="boton-comprar">COMPRAR</button>
+          <div className="col s12 m12 x4 xl4 center-align">
+            <button
+              className="boton-comprar wow zoomIn"
+              data-wow-duration="1s"
+              role="link"
+              onClick={() => {
+                window.open(`${datos.link}`);
+              }}
+            >
+              COMPRAR
+            </button>
           </div>
-          <div className="col s4 left-align">
-            <p>
-              <button className="rebaja">REBAJAS</button>
+          <div className="col s12 m12 x4 xl4 left-align">
+            <p className="cuadro-rebajas">
+              <button className="rebaja wow zoomIn" data-wow-duration="1s">
+                REBAJAS
+              </button>
             </p>
-            <p className="descuento">50% Dto.</p>
+            <p
+              className="descuento wow fadeInRight cuadro-rebajas"
+              data-wow-duration="1s"
+            >
+              50% Dto.
+            </p>
           </div>
         </div>
       </Contenedor>
@@ -62,6 +83,80 @@ const Contenedor = styled.div`
     font-size: 25px;
     font-weight: 200;
     color: #fff;
+  }
+  @media (max-width: 600px) {
+    .cuadro-imagen {
+      display: flex;
+      justify-content: center;
+    }
+    img {
+      width: 25vw;
+    }
+    .boton-comprar {
+      font-size: 15px;
+      width: 200px;
+      padding: 15px;
+      transition: 0.5s;
+      margin-top: 20px;
+    }
+    .cuadro-rebajas {
+      display: flex;
+      justify-content: center;
+    }
+    .rebaja {
+      font-size: 15px;
+      padding: 10px;
+    }
+    .descuento {
+      font-size: 20px;
+    }
+  }
+  @media (min-width: 601px) and (max-width: 992px) {
+    .cuadro-imagen {
+      display: flex;
+      justify-content: center;
+    }
+    img {
+      width: 15vw;
+    }
+    .boton-comprar {
+      font-size: 15px;
+      width: 200px;
+      padding: 15px;
+      transition: 0.5s;
+      margin-top: 20px;
+    }
+    .cuadro-rebajas {
+      display: flex;
+      justify-content: center;
+    }
+    .rebaja {
+      font-size: 15px;
+      padding: 10px;
+    }
+    .descuento {
+      font-size: 20px;
+    }
+  }
+  @media (min-width: 993px) and (max-width: 1200px) {
+    .cuadro-imagen {
+      display: flex;
+      justify-content: center;
+    }
+    .cuadro-rebajas {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @media (min-width: 1201px) {
+    .cuadro-imagen {
+      display: flex;
+      justify-content: center;
+    }
+    .cuadro-rebajas {
+      display: flex;
+      justify-content: center;
+    }
   }
 `;
 export default Course3;

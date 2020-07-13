@@ -1,14 +1,18 @@
 import React, { Fragment, useEffect } from "react";
 import styled from "@emotion/styled";
 import M from "materialize-css";
-const Modal = ({ guardarVentanaModal }) => {
+import WOW from "wowjs";
+
+const Modal = ({ guardarVentanaModal, datos }) => {
   useEffect(() => {
     var elems = document.querySelectorAll(".modal");
     var instances = M.Modal.init(elems, {});
 
     var elems1 = document.querySelectorAll(".modal2");
     var instances = M.Modal.init(elems1, {});
-
+    new WOW.WOW({
+      live: false,
+    }).init();
     funcionAbrirModal();
   }, []);
   const funcionAbrirModal = () => {
@@ -41,18 +45,36 @@ const Modal = ({ guardarVentanaModal }) => {
               el siguiente cupon
             </div>
             <div className="container row">
-              <div className="col s4 rebajas">
-                <div className="titulo-rebajas center-align">Rebajas</div>
+              <div className="col s12 m12 x4 xl4 rebajas">
+                <div
+                  className="titulo-rebajas center-align wow fadeInRight"
+                  data-wow-duration="1s"
+                >
+                  Rebajas
+                </div>
                 <div className="titulo-descuento center-align">50% Dto.</div>
               </div>
-              <div className="col s4">
-                <div className="center-align cupon">031016</div>
+              <div className="col s12 m12 x4 xl4 ">
+                <div className="center-align cupon">{datos.cupon}</div>
                 <div className="center-align">
-                  <button className="comprar-ahora">Comprar ahora</button>
+                  <button
+                    className="comprar-ahora"
+                    role="link"
+                    onClick={() => {
+                      window.open(`${datos.link}`);
+                    }}
+                  >
+                    Comprar ahora
+                  </button>
                 </div>
               </div>
-              <div className="col s4 center-align">
-                <img src="/sheet_public/img/garantia.png" alt="" />
+              <div className="col s12 m12 x4 xl4  center-align">
+                <img
+                  src="/sheet_public/img/garantia.png"
+                  alt=""
+                  className="wow rotateIn"
+                  data-wow-duration="1s"
+                />
               </div>
             </div>
           </div>
@@ -177,6 +199,69 @@ const Contenedor = styled.div`
   .boton-cerrar:hover {
     cursor: pointer;
     cursor: hand;
+  }
+  @media (max-width: 600px) {
+    .titulo-modal {
+      font-size: 25px;
+    }
+    .cupon {
+      font-size: 20px;
+    }
+    .comprar-ahora {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding: 10px;
+    }
+    img {
+      width: 40%;
+    }
+    .titulo-descuento {
+      font-size: 15px;
+    }
+    .cerrar-modal {
+      font-size: 16px;
+    }
+    .cerrar-modal span {
+      font-size: 16px;
+    }
+    .boton-cerrar {
+      font-size: 20px;
+    }
+  }
+  @media (min-width: 601px) and (max-width: 992px) {
+    .titulo-modal {
+      font-size: 25px;
+    }
+    .cupon {
+      font-size: 20px;
+    }
+    .comprar-ahora {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding: 10px;
+    }
+    img {
+      width: 20%;
+    }
+    .titulo-rebajas {
+      margin: 0 auto;
+    }
+    .titulo-descuento {
+      font-size: 15px;
+    }
+    .cerrar-modal {
+      font-size: 16px;
+    }
+    .cerrar-modal span {
+      font-size: 16px;
+    }
+    .boton-cerrar {
+      font-size: 20px;
+    }
+  }
+  @media (min-width: 993px) and (max-width: 1200px) {
+  }
+  @media (min-width: 1201px) {
   }
 `;
 export default Modal;

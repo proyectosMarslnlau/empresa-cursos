@@ -10,7 +10,7 @@ import { animateScroll as scroll } from "react-scroll";
 import WOW from "wowjs";
 import axios from "axios";
 
-const CourseEducanino = () => {
+const CourseWhatsapp = () => {
   //State para poder abrir el MODAL
   const [ventanaModal, guardarVentanaModal] = useState(false);
   //State de datos de CURSO
@@ -27,28 +27,26 @@ const CourseEducanino = () => {
     new WOW.WOW({
       live: false,
     }).init();
-    peticionEducanino();
+    peticionWhatsapp();
   }, []);
   //Variables contantes
   const curso = {
-    resumenCurso: `Si eres como yo y estás loco por tu fiel amigo. Una mirada a su dulce cara y tu corazón se derrite como la mantequilla.
-    Siempre has pensado en tus amigos caninos como miembros de tu familia. Les das mucho amor y afecto, pero no les pasó que alguna vez nos hacen renegar por alguna traverusa o como cuando abrimos la puerta y salen corriendo sin control ¿a quién no?
-    Es por ello, que con Educanino tenemos la oportunidad de saber cuáles son las técnicas para educar y entrenar a nuestros queridos peludos.
+    resumenCurso: `Sabías que si compartes tus estados en whatsapp y lo ven tus propios clientes, esto podría cambiar la imagen de tu negocio en su totalidad, y muy probablemente de manera negativa.
+    Estas en ese punto entre subir una imagen a tu perfil de whatsapp pero debes mantener uno formal por tu negocio. Entonces es programa puede ayudarte a utilizar whatsapp business, con el cual puedes desde darle un perfil más profesional a la cuenta de whatsapp de tu negocio, administrar tus clientes o proveedores de manera independiente de tu whatsapp personal. 
     `,
-    informacionProducto: `Lenny Educanino es un programa completo para educar y entrenar a nuestros queridos amigos peludos.
-    Cuenta con más de 100 técnicas supér sencillas de seguir sin afectar esa alegría que nos regalan estos amiguitos.`,
+    informacionProducto: `Con este programa aprenderás a tener una cuenta en whatsapp business, darle un perfil de negocio, añadir tu dirección o tu catálogo en tu whatsapp para que todos tus clientes puedan llegar directamente.`,
     politicaReembolso: `Prueba el programa por 7 días y si no estás 100% satisfecho, te reembolsaremos tu dinero.`,
-    solicitaDescuento: `Píde por messenger tu CUPÓN del 50% de descuento.`,
+    solicitaDescuento: `Píde por messenger tu CUPÓN del 50% de descuento. `,
   };
   const imagenes = {
-    imagen1: `/sheet_public/img/educanino/01 educanino.jpg`,
-    imagen2: `/sheet_public/img/educanino/02 educanino.jpg`,
+    imagen1: `/sheet_public/img/whatsapp/02 whatsapp.jpg`,
+    imagen2: `/sheet_public/img/whatsapp/02 whatsapp.jpg`,
   };
 
-  const peticionEducanino = async () => {
-    const urlEducanino = `http://localhost:5000/dates?titulo=EDUCANINO`;
+  const peticionWhatsapp = async () => {
+    const urlWhatsapp = `http://localhost:5000/dates?titulo=WHATSAPP BUSINESS`;
     try {
-      const peticion = await axios.get(urlEducanino);
+      const peticion = await axios.get(urlWhatsapp);
       const datos = peticion.data[0];
       guardarDatos(datos);
       if (datos.promocion === "si") {
@@ -74,4 +72,4 @@ const CourseEducanino = () => {
   );
 };
 
-export default CourseEducanino;
+export default CourseWhatsapp;

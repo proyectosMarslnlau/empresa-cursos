@@ -3,18 +3,23 @@ import styled from "@emotion/styled";
 const On1 = () => {
   return (
     <Fragment>
-      <Contenedor>
+      <Contenedor className="wow fadeIn" data-wow-duration="2s">
         <div className="container row">
-          <div className="col s3 seccion-1">
+          <div className="col s12 m12 x3 xl3 seccion-1">
             <div className="center-align">
-              <img src="/sheet_public/img/logo.png" alt="" />
-              <p className="titulo">
+              <img
+                src="/sheet_public/img/logo.png"
+                alt=""
+                className="wow fadeInDown"
+                data-wow-duration="3s"
+              />
+              <p className="titulo wow fadeInLeft" data-wow-duration="3s">
                 SOBRE <br />
                 CRECE
               </p>
             </div>
           </div>
-          <div className="col s9 seccion-2">
+          <div className="col s12 m12 x9 xl9 seccion-2">
             <p className="texto">
               Crecé es un espacio dentro internet que busca compartir valiosa
               información que pueda apoyar vuestras ideas o proyectos. <br />{" "}
@@ -43,7 +48,7 @@ const Contenedor = styled.div`
   margin-top: 100px;
   margin-bottom: 100px;
   .seccion-1 {
-    height: 50vh;
+    height: 100%;
     background: #0b1629;
     border: #8cda3f solid 2px;
   }
@@ -64,6 +69,48 @@ const Contenedor = styled.div`
     padding: 30px;
     font-size: 15px;
     margin-right: 100px;
+  }
+  @media (max-width: 600px) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    img {
+      margin-top: 20px;
+      width: 20vw;
+    }
+    .titulo {
+      font-size: 50px;
+      line-height: 50px;
+      font-weight: 700;
+    }
+    .texto {
+      margin-right: 0px;
+
+      padding: 0px;
+    }
+  }
+  @media (min-width: 601px) and (max-width: 992px) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    img {
+      margin-top: 20px;
+      width: 15vw;
+    }
+    .titulo {
+      font-size: 50px;
+      line-height: 50px;
+      font-weight: 700;
+    }
+    .texto {
+      margin-right: 0px;
+
+      padding: 0px;
+    }
+  }
+  @media (min-width: 993px) and (max-width: 1200px) {
+  }
+  @media (min-width: 1201px) {
   }
 `;
 export default On1;
