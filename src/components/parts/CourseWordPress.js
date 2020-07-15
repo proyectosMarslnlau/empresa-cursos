@@ -46,7 +46,7 @@ const CourseWordPress = () => {
 	};
 
 	const peticionWordpress = async () => {
-		const urlWordpress = `http://crece-pronto.com:2600/api/cursos/WORDPRESS 101`;
+		const urlWordpress = `https://crece-pronto.com/api/cursos/WORDPRESS 101`;
 		try {
 			const peticion = await axios.get(urlWordpress);
 			const datos = peticion.data[0];

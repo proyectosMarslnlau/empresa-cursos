@@ -44,7 +44,7 @@ const CourseWhatsapp = () => {
 	};
 
 	const peticionWhatsapp = async () => {
-		const urlWhatsapp = `http://crece-pronto.com:2600/api/cursos/WHATSAPP BUSINESS`;
+		const urlWhatsapp = `https://crece-pronto.com/api/cursos/WHATSAPP BUSINESS`;
 		try {
 			const peticion = await axios.get(urlWhatsapp);
 			const datos = peticion.data[0];

@@ -46,7 +46,7 @@ const CourseEducanino = () => {
 	};
 
 	const peticionEducanino = async () => {
-		const urlEducanino = `http://crece-pronto.com:2600/api/cursos/EDUCANINO`;
+		const urlEducanino = `https://crece-pronto.com/api/cursos/EDUCANINO`;
 		try {
 			const peticion = await axios.get(urlEducanino);
 			const datos = peticion.data[0];

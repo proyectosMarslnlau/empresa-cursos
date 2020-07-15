@@ -43,7 +43,7 @@ const CourseCanva = () => {
 		imagen2: `/sheet_public/img/canva/01 canva.jpg`
 	};
 	const peticionCanva = async () => {
-		const urlCanva = `http://crece-pronto.com:2600/api/cursos/CANVA PARA FACEBOOK`;
+		const urlCanva = `https://crece-pronto.com/api/cursos/CANVA PARA FACEBOOK`;
 		try {
 			const peticion = await axios.get(urlCanva);
 			const datos = peticion.data[0];

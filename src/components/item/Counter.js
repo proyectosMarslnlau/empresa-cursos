@@ -59,7 +59,7 @@ const Counter = ({ titulo }) => {
 	);
 
 	const peticionCourse = async () => {
-		const url = `http://crece-pronto.com:2600/api/cursos/${titulo}`;
+		const url = `https://crece-pronto.com/api/cursos/${titulo}`;
 
 		try {
 			const peticion = await axios.get(url);

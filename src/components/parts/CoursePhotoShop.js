@@ -45,7 +45,7 @@ const CoursePhotoShop = () => {
 		imagen2: `/sheet_public/img/photoshop/02 photoshop.jpg`
 	};
 	const peticionPhotoshop = async () => {
-		const urlPhotoshop = `http://crece-pronto.com:2600/api/cursos/PHOTOSHOP PRINCIPIANTES`;
+		const urlPhotoshop = `https://crece-pronto.com/api/cursos/PHOTOSHOP PRINCIPIANTES`;
 		try {
 			const peticion = await axios.get(urlPhotoshop);
 			const datos = peticion.data[0];
